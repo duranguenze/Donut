@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- Required meta tags -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<title>Page Title</title>
+		<style type="text/css" media="screen">
+            body{ background-color: ivory; }
+            .CirculoCarrucel img{
+                display: none;
+            }
+		</style>
+        <script src="CuadrodonutCarrucel.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+    <span style="width: 150px;height: 150px;overflow: hidden; display: block;" class="CirculoCarrucel">
+        <img src="https://gcdn.emol.cl/mitos-y-enigmas/files/2016/10/DragonRed.jpg">
+        <img src="https://cronicasdekreisau.com/wp-content/uploads/Dragon-europeo-malvado-1.jpg">
+        <img src="https://es.web.img2.acsta.net/r_1280_720/newsv7/21/05/20/19/43/3423101.jpg">
+    </span>
+		<script>
+        if(false){
+        var CanvasBasico=new Grafica({
+            Canvas:document.getElementById('canvas'),
+            Elementos:1
+        });
+        
+        let CatImagenes = new CatalogoImagenes({
+            Imagenes:
+            [ 
+            ],
+            Canvas: CanvasBasico.Canvas,
+            Radio:CanvasBasico.Sectores[0].R2
+        });
+        CanvasBasico.Elementos=CatImagenes.Imagenes.length;
+        CanvasBasico.unshift(
+        CatImagenes
+        );
+        if(false)//Imagenes en Animacion 
+        CanvasBasico.unshift( new CatalogoImagenes({
+            Imagenes:
+            [
+            ],
+            Canvas: CanvasBasico.Canvas,
+            Radio:0,
+            Rate:600,
+            Animar:true
+        })
+        );
+        
+        /*CanvasBasico.unshift(
+          new ImagenCircular({
+            Radio:CanvasBasico.Sectores[0].R2,
+            Imagen:"https://www.adslzone.net/app/uploads/2019/04/borrar-fondo-imagen.jpg",
+            Canvas:CanvasBasico.Canvas
+          })
+        );*/
+        //CanvasBasico.push(new MostrarFPS({Canvas: CanvasBasico.Canvas}));
+        window.AnimarCuadro=function(){
+            CanvasBasico.DibujarCuadro();
+            window.requestAnimationFrame(window.AnimarCuadro);
+        };
+        window.AnimarCuadro();
+
+		/*
+		Dibujo=new ImagenCircular({
+		    Radio:75,
+		    Imagen:"https://www.adslzone.net/app/uploads/2019/04/borrar-fondo-imagen.jpg",
+		    Canvas:document.getElementById('canvas')
+			});*/
+        }
+        CargarCarrucelCircular('CirculoCarrucel');
+		</script>
+	</body>
+</html> 
